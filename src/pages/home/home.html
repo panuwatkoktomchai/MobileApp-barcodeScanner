@@ -1,17 +1,29 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>เพิ่มรายการข้อมูล</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <p>รหัสบาร์โค๊ดข้อมูล</p>
+  <ion-item>
+    <button ion-button color="primery" outline icon-only (click)="opencamera()">
+      นำเข้าจากบาร์โค๊ด
+      <ion-icon name='ios-camera' md="md-camera" ></ion-icon>
+    </button>
+  </ion-item>
+   <ion-item>
+    <ion-input type="text" placeholder="รหัสบาร์โค๊ดข้อมูล" value="{{ArrayData.id}}"></ion-input>
+  </ion-item>
+  <p>ชื่อ</p>
+  <ion-item>
+    <ion-input type="text" placeholder="ชื่อ"></ion-input>
+  </ion-item>
+  <p>ลายละเอียดข้อมูล
+  <ion-item>
+    <ion-textarea rows = "8" placeholder="รายละเอียด"></ion-textarea>
+  </ion-item>
+  <script>
+    console.log("test")
+  </script>
 </ion-content>
