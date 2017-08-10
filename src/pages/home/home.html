@@ -1,29 +1,38 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>เพิ่มรายการข้อมูล</ion-title>
+    <ion-title>เพิ่มรายการข้อมูล ver 1.1</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <p>รหัสบาร์โค๊ดข้อมูล</p>
   <ion-item>
-    <button ion-button color="primery" outline icon-only (click)="opencamera()">
-      นำเข้าจากบาร์โค๊ด
-      <ion-icon name='ios-camera' md="md-camera" ></ion-icon>
+    <button ion-button color="primery" outline icon-only (click)="BCopencamera()">
+      <ion-icon name='ios-barcode-outline'></ion-icon>
+    </button>
+    <button ion-button color="primery" outline icon-only (click)="QCopencamera()">
+      <ion-icon name='ios-qr-scanner-outline'></ion-icon>
     </button>
   </ion-item>
-   <ion-item>
-    <ion-input type="text" placeholder="รหัสบาร์โค๊ดข้อมูล" value="{{ArrayData.id}}"></ion-input>
-  </ion-item>
-  <p>ชื่อ</p>
-  <ion-item>
-    <ion-input type="text" placeholder="ชื่อ"></ion-input>
-  </ion-item>
-  <p>ลายละเอียดข้อมูล
-  <ion-item>
-    <ion-textarea rows = "8" placeholder="รายละเอียด"></ion-textarea>
-  </ion-item>
-  <script>
-    console.log("test")
-  </script>
+<form (ngSubmit)="savelist()">
+      <ion-item>
+        <ion-label>รหัส</ion-label>
+        <ion-input required type="text" [(ngModel)]="ArrayData.id" name="id" value="{{ArrayData.id}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>ชื่อ</ion-label>
+        <ion-textarea [(ngModel)]="ArrayData.names" name="names" required></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>ราคา/ชิ้น</ion-label>
+        <ion-input required type="number" [(ngModel)]="ArrayData.prices" name="prices" value="{{ArrayData.prices}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea rows = "8" placeholder="รายละเอียด" [(ngModel)] ="ArrayData.description" name="description"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>เพิ่มรายการข้อมูล</button>
+      
+    </form>
+  
 </ion-content>
+

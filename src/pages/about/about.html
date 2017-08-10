@@ -1,11 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Scan
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <button ion-button full (click)="BCopencamera()">
+      <ion-icon name="ios-barcode-outline"></ion-icon>
+      Scan-Barcode
+  </button>
+    <button ion-button full (click)="BCopencamera()">
+      <ion-icon name="ios-qr-scanner-outline"></ion-icon>
+      Scan-QR-code
+  </button>
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="ID-CODE"></ion-input>
+      </ion-item>
+    </ion-list> 
 </ion-content>
